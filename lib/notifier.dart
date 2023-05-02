@@ -13,7 +13,7 @@ class NumberModel with ChangeNotifier {
 }
 
 class ListModel with ChangeNotifier {
-  List<String> _list = [" Sample"];
+  final List<String> _list = [" Sample"];
 
   List get listDatas => _list;
 

@@ -3,17 +3,16 @@ import 'package:prov_eg/notifier.dart';
 import 'package:prov_eg/list_view_screen.dart';
 import 'package:provider/provider.dart';
 
-// ignore: must_be_immutable
 class NewPage extends StatefulWidget {
   const NewPage({
     Key? key,
   }) : super(key: key);
 
   @override
-  _NewPageState createState() => _NewPageState();
+  NewPageState createState() => NewPageState();
 }
 
-class _NewPageState extends State<NewPage> {
+class NewPageState extends State<NewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
