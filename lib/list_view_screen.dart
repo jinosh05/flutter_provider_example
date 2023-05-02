@@ -7,10 +7,10 @@ class ListPage extends StatefulWidget {
   const ListPage({super.key});
 
   @override
-  _ListPageState createState() => _ListPageState();
+  ListPageState createState() => ListPageState();
 }
 
-class _ListPageState extends State<ListPage> {
+class ListPageState extends State<ListPage> {
   final TextEditingController _controller = TextEditingController();
   final List<Color> _listColor = [
     Colors.pink,
@@ -34,8 +34,8 @@ class _ListPageState extends State<ListPage> {
             children: [
               TextButton(
                   onPressed: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) => MyApp()));
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => const MyApp()));
                   },
                   child: const Text("Main Page")),
               SizedBox(

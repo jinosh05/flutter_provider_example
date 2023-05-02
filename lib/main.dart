@@ -13,16 +13,18 @@ void main(List<String> args) {
         create: (_) => ListModel(),
       )
     ],
-    child: MaterialApp(home: MyApp()),
+    child: const MaterialApp(home: MyApp()),
   ));
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Main Page"),
+        title: const Text("Main Page"),
       ),
       body: SafeArea(
         child: Center(
@@ -31,13 +33,13 @@ class MyApp extends StatelessWidget {
               // onPressed: () => context.read<Counter>().increment(),
               TextButton(
                   onPressed: () => context.read<NumberModel>().increment(),
-                  child: Text(" Increment")),
+                  child: const Text(" Increment")),
               TextButton(
                   onPressed: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => NewPage()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const NewPage()));
                   },
-                  child: Text("Next Page")),
+                  child: const Text("Next Page")),
               Text("${context.watch<NumberModel>().newNumber}"),
             ],
           ),
