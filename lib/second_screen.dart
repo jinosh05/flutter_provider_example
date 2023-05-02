@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:prov_eg/notifier.dart';
-import 'package:prov_eg/listView_screen.dart';
+import 'package:prov_eg/list_view_screen.dart';
 import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class NewPage extends StatefulWidget {
-  NewPage({
+  const NewPage({
     Key? key,
   }) : super(key: key);
 
@@ -18,7 +18,7 @@ class _NewPageState extends State<NewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second Page"),
+        title: const Text("Second Page"),
       ),
       body: SafeArea(
         child: Center(
@@ -26,14 +26,14 @@ class _NewPageState extends State<NewPage> {
             children: [
               TextButton(
                   onPressed: () => context.read<NumberModel>().increment(),
-                  child: Text(" Press me")),
+                  child: const Text(" Press me")),
               Text("${context.watch<NumberModel>().newNumber}"),
               TextButton(
                   onPressed: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => ListPage()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ListPage()));
                   },
-                  child: Text("Next Page")),
+                  child: const Text("Next Page")),
             ],
           ),
         ),

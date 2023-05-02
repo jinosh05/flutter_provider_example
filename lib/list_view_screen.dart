@@ -4,13 +4,15 @@ import 'package:prov_eg/notifier.dart';
 import 'package:provider/provider.dart';
 
 class ListPage extends StatefulWidget {
+  const ListPage({super.key});
+
   @override
   _ListPageState createState() => _ListPageState();
 }
 
 class _ListPageState extends State<ListPage> {
-  TextEditingController _controller = TextEditingController();
-  List<Color> _listColor = [
+  final TextEditingController _controller = TextEditingController();
+  final List<Color> _listColor = [
     Colors.pink,
     Colors.black,
     Colors.blue,
@@ -35,19 +37,19 @@ class _ListPageState extends State<ListPage> {
                     Navigator.of(context)
                         .push(MaterialPageRoute(builder: (context) => MyApp()));
                   },
-                  child: Text("Main Page")),
-              Container(
+                  child: const Text("Main Page")),
+              SizedBox(
                 width: 250,
                 child: TextFormField(
-                  decoration:
-                      InputDecoration(hintText: " Text to be Added to list"),
+                  decoration: const InputDecoration(
+                      hintText: " Text to be Added to list"),
                   controller: _controller,
                   onEditingComplete: () {
-                    print(_controller.text + " is added");
+                    print("${_controller.text} is added");
                     context.read<ListModel>().addToList(_controller.text);
                     _controller.clear();
                   },
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: Colors.black,
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
@@ -55,13 +57,13 @@ class _ListPageState extends State<ListPage> {
               ),
               ElevatedButton(
                   onPressed: () {
-                    print(_controller.text + " is added");
+                    print("${_controller.text} is added");
                     context.read<ListModel>().addToList(_controller.text);
                     _controller.clear();
                   },
-                  child: Text(" Add value")),
+                  child: const Text(" Add value")),
               ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: context.watch<ListModel>().listDatas.length,
                 shrinkWrap: true,
                 itemBuilder: (BuildContext context, int index) {
