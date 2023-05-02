@@ -45,7 +45,7 @@ class ListPageState extends State<ListPage> {
                       hintText: " Text to be Added to list"),
                   controller: _controller,
                   onEditingComplete: () {
-                    print("${_controller.text} is added");
+                    debugPrint("${_controller.text} is added");
                     context.read<ListModel>().addToList(_controller.text);
                     _controller.clear();
                   },
@@ -57,7 +57,7 @@ class ListPageState extends State<ListPage> {
               ),
               ElevatedButton(
                   onPressed: () {
-                    print("${_controller.text} is added");
+                    debugPrint("${_controller.text} is added");
                     context.read<ListModel>().addToList(_controller.text);
                     _controller.clear();
                   },
