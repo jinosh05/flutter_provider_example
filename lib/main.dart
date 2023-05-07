@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
               // onPressed: () => context.read<Counter>().increment(),
               TextButton(
                   onPressed: () => context.read<NumberModel>().increment(),
-                  child: const Text(" Increment")),
+                  child: const Text(" Increment",)),
               TextButton(
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
