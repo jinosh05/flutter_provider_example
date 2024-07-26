@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prov_eg/list_view_screen.dart';
+import 'package:prov_eg/list_data_screen.dart';
 import 'package:prov_eg/notifier.dart';
 import 'package:provider/provider.dart';
 
@@ -30,7 +30,7 @@ class NewPageState extends State<NewPage> {
               TextButton(
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const ListPage()));
+                        builder: (context) => const ListDataScreen()));
                   },
                   child: const Text("Next Page")),
             ],
