@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:prov_eg/notifier.dart';
 import 'package:prov_eg/list_view_screen.dart';
+import 'package:prov_eg/notifier.dart';
 import 'package:provider/provider.dart';
 
 class NewPage extends StatefulWidget {
   const NewPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   NewPageState createState() => NewPageState();

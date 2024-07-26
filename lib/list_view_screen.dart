@@ -28,16 +28,24 @@ class ListPageState extends State<ListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("List Notifier UI"),
+        actions: [
+          InkWell(
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => const MyApp()));
+            },
+            child: const Icon(
+              Icons.home,
+            ),
+          )
+        ],
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              TextButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => const MyApp()));
-                  },
-                  child: const Text("Main Page")),
               SizedBox(
                 width: 250,
                 child: TextFormField(
