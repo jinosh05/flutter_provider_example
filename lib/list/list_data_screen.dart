@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prov_eg/list/list_notifier.dart';
-import 'package:prov_eg/main.dart';
+import 'package:prov_eg/numbers/main_page.dart';
 import 'package:provider/provider.dart';
 
 class ListDataScreen extends StatefulWidget {
@@ -34,8 +34,8 @@ class ListDataScreenState extends State<ListDataScreen> {
         actions: [
           InkWell(
             onTap: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => const MyApp()));
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const MainPage()));
             },
             child: const Icon(
               Icons.home,
