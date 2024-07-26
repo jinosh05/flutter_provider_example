@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prov_eg/list/list_notifier.dart';
 import 'package:prov_eg/notifier.dart';
-import 'package:prov_eg/second_screen.dart';
+import 'package:prov_eg/numbers/second_screen.dart';
 import 'package:provider/provider.dart';
 
 void main(List<String> args) {
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
               TextButton(
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const NewPage()));
+                        builder: (context) => const SecondScreen()));
                   },
                   child: const Text("Next Page")),
               Text("${context.watch<NumberModel>().newNumber}"),

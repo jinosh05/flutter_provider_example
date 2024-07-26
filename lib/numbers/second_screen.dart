@@ -3,16 +3,9 @@ import 'package:prov_eg/list/list_data_screen.dart';
 import 'package:prov_eg/notifier.dart';
 import 'package:provider/provider.dart';
 
-class NewPage extends StatefulWidget {
-  const NewPage({
-    super.key,
-  });
+class SecondScreen extends StatelessWidget {
+  const SecondScreen({super.key});
 
-  @override
-  NewPageState createState() => NewPageState();
-}
-
-class NewPageState extends State<NewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
