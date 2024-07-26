@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prov_eg/list_data_screen.dart';
+import 'package:prov_eg/list/list_data_screen.dart';
 import 'package:prov_eg/notifier.dart';
 import 'package:provider/provider.dart';
 

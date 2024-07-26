@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:prov_eg/second_screen.dart';
+import 'package:prov_eg/list/list_notifier.dart';
 import 'package:prov_eg/notifier.dart';
+import 'package:prov_eg/second_screen.dart';
 import 'package:provider/provider.dart';
 
 void main(List<String> args) {
@@ -10,7 +11,7 @@ void main(List<String> args) {
         create: (_) => NumberModel(),
       ),
       ChangeNotifierProvider(
-        create: (_) => ListModel(),
+        create: (_) => ListNotifier(),
       )
     ],
     child: const MaterialApp(home: MyApp()),
@@ -33,7 +34,9 @@ class MyApp extends StatelessWidget {
               // onPressed: () => context.read<Counter>().increment(),
               TextButton(
                   onPressed: () => context.read<NumberModel>().increment(),
-                  child: const Text(" Increment",)),
+                  child: const Text(
+                    " Increment",
+                  )),
               TextButton(
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(

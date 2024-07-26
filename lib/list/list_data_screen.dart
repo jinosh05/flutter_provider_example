@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:prov_eg/list/list_notifier.dart';
 import 'package:prov_eg/main.dart';
-import 'package:prov_eg/notifier.dart';
 import 'package:provider/provider.dart';
 
 class ListDataScreen extends StatefulWidget {
@@ -60,7 +60,7 @@ class ListDataScreenState extends State<ListDataScreen> {
                     controller: _controller,
                     onEditingComplete: () {
                       debugPrint("${_controller.text} is added");
-                      context.read<ListModel>().addToList(_controller.text);
+                      context.read<ListNotifier>().addToList(_controller.text);
                       _controller.clear();
                     },
                     style: const TextStyle(
@@ -73,14 +73,14 @@ class ListDataScreenState extends State<ListDataScreen> {
                 ElevatedButton(
                     onPressed: () {
                       debugPrint("${_controller.text} is added");
-                      context.read<ListModel>().addToList(_controller.text);
+                      context.read<ListNotifier>().addToList(_controller.text);
                       _controller.clear();
                     },
                     child: const Text("Add value")),
                 const SizedBox(height: 16),
                 ListView.builder(
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: context.watch<ListModel>().listDatas.length,
+                  itemCount: context.watch<ListNotifier>().listDatas.length,
                   shrinkWrap: true,
                   itemBuilder: (BuildContext context, int index) {
                     return Card(
@@ -90,7 +90,7 @@ class ListDataScreenState extends State<ListDataScreen> {
                         padding: const EdgeInsets.all(12.0),
                         child: Center(
                           child: Text(
-                            context.watch<ListModel>().listDatas[index],
+                            context.watch<ListNotifier>().listDatas[index],
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
